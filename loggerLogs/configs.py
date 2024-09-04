@@ -12,3 +12,10 @@ LOGGING_FORMAT: str = "%(asctime)s || %(filename)s::%(module)s - %(funcName)s (%
 DATE_FMT: str = "%Y%m%d"
 DATETIME_FMT: str = "%Y%m%d%H%M%S"
 TIMESTAMP_FMT: str = "%Y-%m-%d %H:%M:%S.%f"
+# log levels
+LEVELS: dict[int, str] = {
+    10: "DEBUG",
+    20: "INFO",
+    30: "WARNING",
+    40: "ERROR",
+}

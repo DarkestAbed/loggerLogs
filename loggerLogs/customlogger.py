@@ -27,11 +27,10 @@ from loggerLogs.configs import (
     LOGGING_FORMAT,
     DATE_FMT,
 )
-from loggerLogs.singletons import Singleton
 
 
 @dataclass
-class CustomLogger(metaclass=Singleton):
+class CustomLogger:
     """
     ## `CustomLogger` class
 
