@@ -19,4 +19,4 @@ def convenient_logger(log_level: int = LOGGING_LEVEL_LOGGER) -> CustomLogger:
         file_log_level=None,
     )
 
-logs: Logger = convenient_logger()
+logs: Logger = convenient_logger().logger
