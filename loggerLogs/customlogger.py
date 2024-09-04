@@ -22,10 +22,11 @@ from logging import (
 from os.path import exists, join
 
 from loggerLogs.configs import (
+    DATE_FMT,
+    LEVELS,
     LOGGING_LEVEL_LOGGER,
     LOGGING_LEVEL_CONSOLE,
     LOGGING_FORMAT,
-    DATE_FMT,
 )
 
 
@@ -88,6 +89,7 @@ class CustomLogger:
                 print("File log config error")
                 raise RuntimeError
         # logger setup
+        print(f"Initializing logger on level {LEVELS.get(LOGGING_LEVEL_LOGGER)}.")
         self.logger: Logger = getLogger(__name__)
         self.logger.setLevel(level=log_level)
         formatter = Formatter(LOGGING_FORMAT)
