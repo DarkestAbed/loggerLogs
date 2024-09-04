@@ -2,7 +2,7 @@
 
 from os import environ
 
-# from loggerLogs.convenient import logs
+from loggerLogs.convenient import logs
 
 
 environ.update({"ENVIRON": "dev"})

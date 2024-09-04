@@ -35,3 +35,9 @@ class Singleton(type):
         # else:
         #     cls._instances[cls].__init__(*args, **kwargs)
         return cls._instances[cls]
+    
+    @staticmethod
+    def destroy(self):
+        cls = self.__class__
+        if cls in cls._instances:
+            del cls._instances[cls]
