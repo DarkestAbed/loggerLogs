@@ -18,6 +18,10 @@ from logging import (
     FileHandler,
     Formatter,
     getLogger,
+    DEBUG,
+    INFO,
+    WARNING,
+    ERROR,
 )
 from os.path import exists, join
 
@@ -65,7 +69,7 @@ class CustomLogger:
         Returns:
             None
         """
-        LOGGING_LEVELS_INT: list[int] = [10, 20, 30, 40]
+        LOGGING_LEVELS_INT: list[int] = [DEBUG, INFO, WARNING, ERROR]
         date: str = datetime.strftime(datetime.now(), DATE_FMT)
         # guardrails
         if log_level not in LOGGING_LEVELS_INT:
@@ -89,7 +93,7 @@ class CustomLogger:
                 print("File log config error")
                 raise RuntimeError
         # logger setup
-        print(f"Initializing logger on level {LEVELS.get(LOGGING_LEVEL_LOGGER)}.")
+        print(f"Initializing logger on level {LEVELS.get(log_level)}.")
         self.logger: Logger = getLogger(__name__)
         self.logger.setLevel(level=log_level)
         formatter = Formatter(LOGGING_FORMAT)
@@ -106,6 +110,26 @@ class CustomLogger:
             self.file_log.setLevel(level=file_log_level)
             self.file_log.setFormatter(formatter)
             self.logger.addHandler(self.file_log)
+        return None
+
+    def debug(self, txt: str) -> None:
+        self.logger.debug(txt)
+        return None
+
+    def info(self, txt: str) -> None:
+        self.logger.info(txt)
+        return None
+
+    def warning(self, txt: str) -> None:
+        self.logger.warning(txt)
+        return None
+
+    def error(self, txt: str) -> None:
+        self.logger.error(txt)
+        return None
+
+    def exception(self, txt: str) -> None:
+        self.logger.exception(txt, stack_info=True)
         return None
 
 
