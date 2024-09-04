@@ -67,7 +67,6 @@ class CustomLogger(metaclass=Singleton):
         """
         LOGGING_LEVELS_INT: list[int] = [10, 20, 30, 40]
         date: str = datetime.strftime(datetime.now(), DATE_FMT)
-        print(f"{log_level = }\n{console_log = }, {console_log_level = }\n{file_log = }, {file_log_path = }, {file_log_level = }")
         # guardrails
         if log_level not in LOGGING_LEVELS_INT:
             print("Log level not allowed")
@@ -110,9 +109,6 @@ class CustomLogger(metaclass=Singleton):
 
 
 def main() -> None:
-    # TODO: remove tests
-    temp_cl: CustomLogger = CustomLogger(log_level=1)
-    # ENDTODO
     return None
 
 

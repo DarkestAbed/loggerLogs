@@ -5,7 +5,6 @@ from logging import Logger
 from loggerLogs.configs import (
     LOGGING_LEVEL_LOGGER,
     LOGGING_LEVEL_CONSOLE,
-    LOGGING_LEVEL_FILE,
 )
 from loggerLogs.customlogger import CustomLogger
 
